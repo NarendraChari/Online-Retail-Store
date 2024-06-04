@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Retail Store</title>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding:0;
+    
+    }
+    body{
+        background: url("C:/Users/nclap/Downloads/image.jpg") no-repeat 50% 50%;
+        background-size: cover;
+        height: 150vh;
+        width: 100%;
+        font-family: 'Monument'
+    }
+    header{
+        display: flex;
+        height: 100px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        transition: 0.6s;
+    
+    }
+    header.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 60px;
+        background-color: rgb(102, 236, 61);
+    
+    }
+    header.activego,
+    header.active ul li a{
+        color: black;
+    }
+    header ul{
+        list-style: none;
+        display: flex;
+        margin-right:40px ;
+    }
+    header ul li{
+        margin: 0px 14px;
+    }
+    header ul li a{
+        color: rgb(181, 245, 92);
+        text-decoration: none;
+        font-size: 23px;
+        
+    }
+    header .logo{
+        font-size: 40px;
+        color: white;
+    
+        font-weight: 700;
+        margin-left: 40px;
+    }
+   
+
+button{
+  border:none;
+  border-radius:5px;
+  padding:15px 30px;
+  font-size:18px;
+  cursor:pointer;
+  background-color: transparent;
+}
+
+button:hover{
+  background-color:#90ec65;
+}
+
+.options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  background-color:#f68cb1;
+  border-radius:5px;
+  box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.4);
+}
+
+.drop:hover .options {
+  display: block;
+}
+
+.options a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+  padding:20px 40px;
+}
+
+.options a:hover {
+  color: #0a0a23;
+  background-color: #ede32f;
+  border-radius:5px;
+}
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="logo">Retail Store</div>
+            <div class="drop">
+                <button>Home</button>
+                <div class="options">
+                
+                    <a href="C:\Users\nclap\Downloads\Mini P\Mproject\test.html">Laptops</a>
+                    <a href="#">Mobiles</a>
+                    <a href="#">Ac</a>
+                </div>
+          </div>
+          <div class="drop">
+            <button>Elm1</button>
+            <div class="options">
+            <a href="#">Tab</a>
+            <a href="#">Mobiles</a>
+            <a href="#">Ac</a>
+        </div>
+            </div>
+            <div class="drop">
+          <button>Elm2</button>
+          <div class="options">
+          <a href="#">Tab</a>
+          <a href="#">Mobiles</a>
+          <a href="#">Ac</a>
+          </div>
+        </div>
+        <div class="drop">
+            <button>Elm2</button>
+            <div class="options">
+            <a href="#">Tab</a>
+            <a href="#">Mobiles</a>
+            <a href="#">Ac</a>
+            </div>
+          </div>
+          <div class="drop">
+            <button>Elm2</button>
+            <div class="options">
+            <a href="#">Tab</a>
+            <a href="#">Mobiles</a>
+            <a href="#">Ac</a>
+            </div>
+          </div>
+        
+        </div>
+
+           
+    </header>
+    <script>
+
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("active",window.scrollY > 0);
+        });
+
+        var tl = gsap.timeline();
+        tl.fromTo(".logo , .li",{
+            opacity:0,
+            y: "-100%"
+        },{
+            opacity:1,
+            duration: 1.5,
+            y: "0%",
+            stagger: 0.15
+        })
+    </script>
+    
+</body>
+</html>
